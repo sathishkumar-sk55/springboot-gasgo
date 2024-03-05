@@ -1,0 +1,13 @@
+server:
+  port: 8002
+
+Async-event:
+  kafka:
+    topic-async-event: "external_async_event_t1"
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

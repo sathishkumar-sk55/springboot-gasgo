@@ -1,0 +1,16 @@
+server:
+  port: 8001
+spring:
+  sql:
+    init:
+      enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: frost123
+    url: jdbc:postgresql://localhost:5432/gasgodb
+    username: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgresPlusDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true

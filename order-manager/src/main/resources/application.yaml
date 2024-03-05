@@ -1,0 +1,44 @@
+server:
+  port: 8005
+spring:
+  sql:
+    init:
+      enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: frost123
+    url: jdbc:postgresql://localhost:5432/gasgodb
+    username: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgresPlusDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      enable-auto-commit: true
+      auto-commit-interval-ms: 1000
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+
+userhub-service:
+  base:
+    url: "http://localhost:8001"
+
+# send-request: Y make call N won't make call instead mock response
+external-system:
+  send-request: N
+  base:
+    url: "https://e0d8fbe6-2a67-4247-807c-8ac688727249.mock.pstmn.io"
+
+Async-event:
+  kafka:
+    topic-async-event: "external_async_event_t1"

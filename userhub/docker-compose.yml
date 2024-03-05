@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  app:
+    depends_on:
+      - postgres
+    build: .
+    ports:
+      - "8002:8002"
+    networks:
+      - userhub-network
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: aishu
+      POSTGRES_PASSWORD: aishu123
+      POSTGRES_DB: gasgodb
+    ports:
+      - "5433:5432"
+    networks:
+      - userhub-network
+    volumes:
+      - data-postgresql:/var/lib/postgresql/data
+
+networks:
+  userhub-network:
+    driver: bridge
+
+volumes:
+  data-postgresql:

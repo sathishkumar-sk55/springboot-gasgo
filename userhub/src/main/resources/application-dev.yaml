@@ -1,0 +1,11 @@
+server:
+  port: 8002
+spring:
+  sql:
+    init:
+      enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: aishu123
+    url: jdbc:postgresql://postgres:5432/gasgodb
+    username: aishu
