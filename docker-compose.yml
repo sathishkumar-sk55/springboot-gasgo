@@ -1,14 +1,68 @@
-version: '2'
 services:
   zookeeper:
     image: wurstmeister/zookeeper
     ports:
     - "2181:2181"
+    networks:
+      - gasgo-network
 
   kafka:
     image: wurstmeister/kafka
     ports:
     - "9092:9092"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    networks:
+      - gasgo-network
+  async-handler:
+    depends_on:
+      - zookeeper
+      - kafka
+    build: .\order-manager
+    ports:
+      - "8003:8003"
+    networks:
+      - gasgo-network
+
+  postgres-db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: aishu
+      POSTGRES_PASSWORD: aishu123
+      POSTGRES_DB: gasgodb
+    ports:
+      - "5432:5432"
+    networks:
+      - gasgo-network
+    volumes:
+      - data-postgresql:/var/lib/postgresql/data
+
+  user-hub:
+    depends_on:
+      - postgres-db
+    build: .\userhub
+    ports:
+      - "8002:8002"
+    networks:
+      - gasgo-network
+
+  order-manager:
+    depends_on:
+      - postgres-db
+      - zookeeper
+      - kafka
+    build: .\order-manager
+    ports:
+      - "8005:8005"
+    networks:
+      - gasgo-network
+
+
+networks:
+  gasgo-network:
+    driver: bridge
+
+volumes:
+  data-postgresql:
+

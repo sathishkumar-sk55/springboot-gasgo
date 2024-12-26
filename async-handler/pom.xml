@@ -44,12 +44,13 @@
         <dependency>
             <groupId>com.frost.gasgo</groupId>
             <artifactId>common-lib</artifactId>
-            <version>2.0.1</version>
+            <version>3.1.1</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
 
 	<build>
+		<finalName>async-handler</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

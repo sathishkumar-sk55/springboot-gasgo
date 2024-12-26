@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 8003
 
 Async-event:
   kafka:
@@ -8,6 +8,6 @@ Async-event:
 spring:
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: kafka:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

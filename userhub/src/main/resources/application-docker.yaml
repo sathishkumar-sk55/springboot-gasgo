@@ -7,5 +7,5 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     password: aishu123
-    url: jdbc:postgresql://postgres:5432/gasgodb
+    url: jdbc:postgresql://postgres-db:5432/gasgodb
     username: aishu
