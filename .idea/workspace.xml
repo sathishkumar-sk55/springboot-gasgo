@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5f5b6b2-be90-481b-bbc7-9aabd33b56e5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="a5f5b6b2-be90-481b-bbc7-9aabd33b56e5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +61,7 @@
     "Spring Boot.AsyncHandlerApplication.executor": "Run",
     "Spring Boot.OrderManagerApplication.executor": "Run",
     "Spring Boot.UserhubApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/springboot-gasgo",
@@ -161,6 +158,7 @@
       <workItem from="1735214571844" duration="11181000" />
       <workItem from="1735232592899" duration="324000" />
       <workItem from="1735233055174" duration="758000" />
+      <workItem from="1735233828485" duration="178000" />
     </task>
     <servers />
   </component>
