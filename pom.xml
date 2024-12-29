@@ -7,10 +7,8 @@
     <artifactId>Parent-Aggregator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-
     <name>gasgo</name>
 
-    <!-- This is where we'll add our sub-modules. -->
     <modules>
         <module>common-lib</module>
         <module>userhub</module>
