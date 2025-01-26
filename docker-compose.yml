@@ -19,7 +19,7 @@ services:
     depends_on:
       - zookeeper
       - kafka
-    build: .\order-manager
+    build: .\async-handler
     ports:
       - "8003:8003"
     networks:

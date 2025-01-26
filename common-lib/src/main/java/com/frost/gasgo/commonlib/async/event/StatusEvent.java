@@ -11,7 +11,5 @@ public class StatusEvent {
     private long orderId;
     private String status;
     private String estimatedDeliveryDate;
-
-    public StatusEvent(String messageReceived) {
-    }
+    private String message;
 }
