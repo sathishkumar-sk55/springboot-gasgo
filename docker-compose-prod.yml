@@ -37,7 +37,6 @@ services:
       - gasgo-network
     volumes:
       - ./db_init_script.sql:/docker-entrypoint-initdb.d/db_init_script.sql:ro
-      - ./db_init_script_testData.sql:/docker-entrypoint-initdb.d/db_init_script_testData.sql:ro
       - data-postgresql:/var/lib/postgresql/data
 
   user-hub:
